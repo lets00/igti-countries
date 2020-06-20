@@ -1,6 +1,13 @@
 # Countries in the world
 
 This project was created on IGTI Fullstack course to learn how to use React Class components. It shows an list with all countries name, flags and IDs, selected by country name.
+The image below shows how the App works.
+
+![Countries 1](./countries1.png)
+
+The image below shows App filtering countries that match with a specific string.
+
+![Countries 2](./countries2.png)
 
 ## create-react-app
 
