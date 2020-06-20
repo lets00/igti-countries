@@ -1,3 +1,9 @@
+# Countries in the world
+
+This project was created on IGTI Fullstack course to learn how to use React Class components. It shows an list with all countries name, flags and IDs, selected by country name.
+
+## create-react-app
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
