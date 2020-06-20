@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Countries from './components/countries/Countries';
 import Header from './components/header/Header';
+import css from './app.module.css';
 
 export default class App extends Component {
 
@@ -44,7 +45,7 @@ export default class App extends Component {
     const { filteredCountries, filter, filteredPopulation } = this.state
     return (
       <div className="container">
-        <h1>React Countries</h1>
+        <h1 className={css.centeredTitle}>React Countries</h1>
         <Header filter={filter} countryCount={filteredCountries.length} populationCount={filteredPopulation} onChangeFilter={this.handleChangeFilter}/>
         <Countries countries={filteredCountries}/>
       </div>

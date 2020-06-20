@@ -12,7 +12,7 @@ export default class Header extends Component {
         const { filter, countryCount, populationCount } = this.props;
         return (
             <div className={css.flexRow}>
-                <input className={css.input} type="text" value={filter} onChange={this.handleInputChange}></input>
+                <input className={css.input} type="text" placeholder="Filtro" value={filter} onChange={this.handleInputChange}></input>
                 <span className={css.countries}> Países: <strong>{countryCount}</strong></span>
                 <span className={css.population}>População: <strong>{formatNumber(populationCount)}</strong></span>
             </div>
