@@ -9,7 +9,8 @@ export default class App extends Component {
     this.state = {
       allCountries: [],
       filteredCountries: [],
-      filter: ''
+      filter: '',
+      filteredPopulation: 0,
     }
   }
 
@@ -19,9 +20,11 @@ export default class App extends Component {
     const allCountries = json.map(({ name, numericCode, flag, population }) => {
       return { id: numericCode, name, filterName: name.toLowerCase(), flag, population }
     });
+    const filteredPopulation = allCountries.reduce((acc, country) => acc + country.population, 0)
     this.setState({
       allCountries,
-      filteredCountries: allCountries
+      filteredCountries: allCountries,
+      filteredPopulation
     })
   }
 
@@ -29,18 +32,20 @@ export default class App extends Component {
     const newTextLowerCase = newText.toLowerCase()
     const { allCountries } = this.state
     const filteredCountries = allCountries.filter(country => country.filterName.includes(newTextLowerCase) > 0)
+    const filteredPopulation = filteredCountries.reduce((acc, country) => acc + country.population, 0)
     this.setState({
       filter: newText,
-      filteredCountries
+      filteredCountries,
+      filteredPopulation
     })
   }
 
   render() {
-    const { filteredCountries, filter } = this.state
+    const { filteredCountries, filter, filteredPopulation } = this.state
     return (
       <div className="container">
         <h1>React Countries</h1>
-        <Header filter={filter} onChangeFilter={this.handleChangeFilter}/>
+        <Header filter={filter} countryCount={filteredCountries.length} populationCount={filteredPopulation} onChangeFilter={this.handleChangeFilter}/>
         <Countries countries={filteredCountries}/>
       </div>
     );
