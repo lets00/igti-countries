@@ -23,7 +23,6 @@ export default class App extends Component {
 
   render() {
     const { allCountries } = this.state
-    console.log(allCountries)
     return (
       <div className="container">
         <h1>React Countries</h1>
